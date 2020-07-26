@@ -53,4 +53,14 @@ const DUMMY_CATEGORIES = const [
     title: 'Summer',
     color: Colors.teal,
   ),
+  Category(
+    id: 'c11',
+    title: 'Thai',
+    color: Colors.red,
+  ),
+  Category(
+    id: 'c12',
+    title: 'Drinks',
+    color: Colors.purple,
+  ),
 ];
