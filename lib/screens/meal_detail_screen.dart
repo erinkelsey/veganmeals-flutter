@@ -6,6 +6,11 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal-detail';
 
+  final Function toggleFavorite;
+  final Function isFavorite;
+
+  MealDetailScreen(this.toggleFavorite, this.isFavorite);
+
   Widget buildSectionTitle(BuildContext context, String text){
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
@@ -98,13 +103,21 @@ class MealDetailScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon( 
-          Icons.delete,
+      floatingActionButton: FloatingActionButton( 
+        child: Icon (
+          isFavorite(mealId) 
+            ? Icons.favorite 
+            : Icons.favorite_border,
         ),
-        // pass info to previous page and pop current page off stack
-        onPressed: () => Navigator.of(context).pop(mealId),
+        onPressed: () => toggleFavorite(mealId),
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon( 
+      //     Icons.delete,
+      //   ),
+      //   // pass info to previous page and pop current page off stack
+      //   onPressed: () => Navigator.of(context).pop(mealId),
+      // ),
     );
   }
 }
