@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import './screens/categories_screen.dart';
@@ -6,6 +5,8 @@ import './screens/category_meals_screen.dart';
 import './screens/meal_detail_screen.dart';
 import './screens/top_tabs_screen.dart';
 import './screens/bottom_tabs_screen.dart';
+import './screens/filters_screen.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -38,9 +39,11 @@ class MyApp extends StatelessWidget {
       ),
       // home: CategoriesScreen(),
       routes: {
-        '/': (ctx) => kIsWeb ? TopTabsScreen() : TabsScreen(),
+        // '/': (ctx) => kIsWeb ? TopTabsScreen() : TabsScreen(),
+        '/': (ctx) => TabsScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(),
       },
       // default route -> no registered route was found in the routes table
       onGenerateRoute: (settings) {

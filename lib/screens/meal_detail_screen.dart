@@ -98,6 +98,13 @@ class MealDetailScreen extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon( 
+          Icons.delete,
+        ),
+        // pass info to previous page and pop current page off stack
+        onPressed: () => Navigator.of(context).pop(mealId),
+      ),
     );
   }
 }
