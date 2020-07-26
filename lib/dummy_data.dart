@@ -11,12 +11,12 @@ const DUMMY_CATEGORIES = const [
   Category(
     id: 'c2',
     title: 'Quick & Easy',
-    color: Colors.red,
+    color: Colors.cyan,
   ),
   Category(
     id: 'c3',
     title: 'Smoothies & Bowls',
-    color: Colors.orange,
+    color: Colors.lightGreen,
   ),
   Category(
     id: 'c4',
@@ -31,17 +31,17 @@ const DUMMY_CATEGORIES = const [
   Category(
     id: 'c6',
     title: 'Indian',
-    color: Colors.green,
+    color: Colors.orange,
   ),
   Category(
     id: 'c7',
     title: 'Breakfast',
-    color: Colors.lightBlue,
+    color: Colors.red,
   ),
   Category(
     id: 'c8',
     title: 'Asian',
-    color: Colors.lightGreen,
+    color: Colors.indigo,
   ),
   Category(
     id: 'c9',
@@ -56,11 +56,11 @@ const DUMMY_CATEGORIES = const [
   Category(
     id: 'c11',
     title: 'Thai',
-    color: Colors.red,
+    color: Colors.green,
   ),
   Category(
     id: 'c12',
     title: 'Drinks',
-    color: Colors.purple,
+    color: Colors.lightBlue,
   ),
 ];
