@@ -82,7 +82,7 @@ const DUMMY_MEALS = const [
         'https://vegan-meals-assets-flutter.s3.ca-central-1.amazonaws.com/banana-chips-guacamole.jpg',
     duration: 20,
     ingredients: [
-      '2 bananas'
+      '2 bananas',
       '1 avacodo',
       '1 jalepeno, minced',
       '1 Tablespoon of Red Onion, minced',

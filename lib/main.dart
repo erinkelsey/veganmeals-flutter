@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './screens/categories_screen.dart';
 import './screens/category_meals_screen.dart';
+import './screens/meal_detail_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,7 +37,17 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (ctx) => CategoriesScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
-      }
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+      // default route -> no registered route was found in the routes table
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      },
+      // when you define nothing as a route route -> 404
+      // or if onGenerateRoute is not defined -> or doesn't return a valid 
+      // navigation action
+      // onUnknownRoute: 
     );
   }
 }
