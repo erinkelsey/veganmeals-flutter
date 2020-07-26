@@ -203,7 +203,7 @@ const DUMMY_MEALS = const [
   Meal(
     id: 'm5',
     categories: [
-      'c6'
+      'c6',
       'c8',
       'c11',
     ],
