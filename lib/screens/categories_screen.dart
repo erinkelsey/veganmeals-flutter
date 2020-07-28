@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import '../dummy_data.dart';
 import '../widgets/category_item.dart';
 
+/// Widget for building the screen showing all of the
+/// meal categories.
 class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,14 +18,11 @@ class CategoriesScreen extends StatelessWidget {
           shrinkWrap: true,
           padding: const EdgeInsets.all(15),
           children: DUMMY_CATEGORIES
-            .map(
-              (catData) => CategoryItem(
-                catData.id,
-                catData.title,
-                catData.color
-              ),
-            )
-            .toList(),
+              .map(
+                (catData) =>
+                    CategoryItem(catData.id, catData.title, catData.color),
+              )
+              .toList(),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200,
             childAspectRatio: 3 / 2,

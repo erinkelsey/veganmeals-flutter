@@ -5,7 +5,10 @@ import '../screens/categories_screen.dart';
 import '../widgets/main_drawer.dart';
 import '../models/meal.dart';
 
+//// Widget for building the bottom tab navigation
+/// bar for the app.
 class TabsScreen extends StatefulWidget {
+  /// List of the user's favorite meals.
   final List<Meal> favoriteMeals;
 
   TabsScreen(this.favoriteMeals);
@@ -15,24 +18,26 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
+  /// List of pages in the tab bar.
   List<Map<String, Object>> _pages;
+
+  /// The index of the current page that is being
+  /// dispalyed to the user.
   int _selectedPageIndex = 0;
 
+  /// Initialize the tabs with the titles and the screens
+  /// to navigate to, if pressed.
   @override
   initState() {
     _pages = [
-      {
-        'page': CategoriesScreen(), 
-        'title': 'Categories'
-      },
-      {
-        'page': FavoritesScreen(widget.favoriteMeals), 
-        'title': 'Favorites'
-      },
+      {'page': CategoriesScreen(), 'title': 'Categories'},
+      {'page': FavoritesScreen(widget.favoriteMeals), 'title': 'Favorites'},
     ];
     super.initState();
   }
 
+  /// Updates the selected page based on which tab
+  /// the user pressed.
   void _selectPage(int index) {
     setState(() {
       _selectedPageIndex = index;

@@ -1,15 +1,15 @@
 ## About
 
-A simple Vegan Meals app using Flutter and Dart for iOS, Android and web. 
+A simple Vegan Meals app using Flutter and Dart for iOS, Android and web.
 
 Hosted web example here: http://vegan-meals-flutter.s3-website.ca-central-1.amazonaws.com
 
 ## Functionality
 
-  - Search through categories to find recipes
-  - Filter recipes based on preferences
-  - Mark meals as favorite
-  - View favorite meals
+- Search through categories to find recipes
+- Filter recipes based on preferences
+- Mark meals as favorite
+- View favorite meals
 
 ## Install and Setup
 
@@ -28,5 +28,5 @@ Run on a web browser (if you have installed support for running on web):
     $ flutter run -d chrome
 
 ## TODO
-   - Test cases
-   - Dart doc
+
+- Test cases

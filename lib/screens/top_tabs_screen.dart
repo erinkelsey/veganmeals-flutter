@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/screens/favorites_screen.dart';
 import '../screens/categories_screen.dart';
 
+/// Widget for building tabs to dispaly underneath
+/// the appbar of in app.
 class TopTabsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

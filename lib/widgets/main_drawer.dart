@@ -2,8 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../screens/filters_screen.dart';
 
+/// Widget to build the main drawer for this app.
+///
+/// Builds a drawer with two items:
+/// > Meals
+/// > Filters
+///
+/// The items will navigate to their respective pages
+/// when pressed by user.
 class MainDrawer extends StatelessWidget {
-  Widget buildListTile(String title, IconData icon, Function tapHandler){
+  /// Widget for building individual list item of drawer.
+  Widget buildListTile(String title, IconData icon, Function tapHandler) {
     return ListTile(
       leading: Icon(
         icon,
@@ -41,16 +50,19 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           buildListTile(
-            'Meals', 
+            'Meals',
             Icons.restaurant,
             () => Navigator.of(context).pushReplacementNamed('/'),
           ),
           buildListTile(
-            'Filters', 
+            'Filters',
             Icons.settings,
-            () => Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName),
+            () => Navigator.of(context)
+                .pushReplacementNamed(FiltersScreen.routeName),
           ),
         ],
       ),

@@ -13,6 +13,7 @@ void main() {
   runApp(MyApp());
 }
 
+/// Main entry point for app.
 class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
@@ -20,16 +21,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  /// Filters for meals.
   Map<String, bool> _filters = {
     'gluten': false,
     'sugar': false,
     'nut': false,
     'lowCal': false
   };
+
+  /// List of current available meals.
   List<Meal> _availableMeals = DUMMY_MEALS;
+
+  /// List of meals favorited.
   List<Meal> _favoriteMeals = [];
 
-  void _setFilters(Map<String, bool> filterData){
+  /// Sets the state of the meal filters.
+  void _setFilters(Map<String, bool> filterData) {
     setState(() {
       _filters = filterData;
 
@@ -44,11 +51,12 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void _toggleFavorite(String mealId){
-    final existingIndex = 
-      _favoriteMeals.indexWhere((meal) => meal.id == mealId);
+  /// Toggles meal with [id] as a favorite.
+  void _toggleFavorite(String mealId) {
+    final existingIndex =
+        _favoriteMeals.indexWhere((meal) => meal.id == mealId);
 
-    if (existingIndex >= 0){
+    if (existingIndex >= 0) {
       setState(() {
         _favoriteMeals.removeAt(existingIndex);
       });
@@ -59,7 +67,8 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  bool _isMealFavorite(String id){
+  /// Returns true if meal with [id] is a favorite, else returns false
+  bool _isMealFavorite(String id) {
     return _favoriteMeals.any((meal) => meal.id == id);
   }
 
@@ -73,25 +82,27 @@ class _MyAppState extends State<MyApp> {
         canvasColor: Colors.grey[100],
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
-          bodyText1: TextStyle(
-            color: Color.fromRGBO(20, 51, 51, 1),
-          ),
-          bodyText2: TextStyle(
-            color: Color.fromRGBO(20, 51, 51, 1),
-          ),
-          headline6: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'RobotoCondensed',
-          ),
-        ),
+              bodyText1: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              bodyText2: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              headline6: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'RobotoCondensed',
+              ),
+            ),
       ),
       // home: CategoriesScreen(),
       routes: {
         // '/': (ctx) => kIsWeb ? TopTabsScreen() : TabsScreen(),
         '/': (ctx) => TabsScreen(_favoriteMeals),
-        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(_availableMeals),
-        MealDetailScreen.routeName: (ctx) => MealDetailScreen(_toggleFavorite, _isMealFavorite),
+        CategoryMealsScreen.routeName: (ctx) =>
+            CategoryMealsScreen(_availableMeals),
+        MealDetailScreen.routeName: (ctx) =>
+            MealDetailScreen(_toggleFavorite, _isMealFavorite),
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
       },
       // default route -> no registered route was found in the routes table
@@ -100,9 +111,9 @@ class _MyAppState extends State<MyApp> {
         return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
       },
       // when you define nothing as a route route -> 404
-      // or if onGenerateRoute is not defined -> or doesn't return a valid 
+      // or if onGenerateRoute is not defined -> or doesn't return a valid
       // navigation action
-      // onUnknownRoute: 
+      // onUnknownRoute:
     );
   }
 }

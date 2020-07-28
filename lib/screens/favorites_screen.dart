@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import '../models/meal.dart';
 import '../widgets/meal_item.dart';
 
+/// Widget for building the screen that displays the
+/// user's [favoriteMeals]
 class FavoritesScreen extends StatelessWidget {
+  /// List of the user's favorite meals.
   final List<Meal> favoriteMeals;
 
   FavoritesScreen(this.favoriteMeals);
@@ -21,19 +24,17 @@ class FavoritesScreen extends StatelessWidget {
           child: ListView.builder(
             itemBuilder: (ctx, index) {
               return MealItem(
-                id: favoriteMeals[index].id,
-                title: favoriteMeals[index].title,
-                imageUrl: favoriteMeals[index].imageUrl,
-                duration: favoriteMeals[index].duration,
-                affordability: favoriteMeals[index].affordability,
-                complexity: favoriteMeals[index].complexity
-              );
+                  id: favoriteMeals[index].id,
+                  title: favoriteMeals[index].title,
+                  imageUrl: favoriteMeals[index].imageUrl,
+                  duration: favoriteMeals[index].duration,
+                  affordability: favoriteMeals[index].affordability,
+                  complexity: favoriteMeals[index].complexity);
             },
             itemCount: favoriteMeals.length,
           ),
         ),
       );
     }
-    
   }
 }
